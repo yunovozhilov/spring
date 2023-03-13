@@ -3,5 +3,21 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-
+    <bean id="coords" class="ru.yunovozhilov.Coords" scope="prototype" />
+    <bean id="point" class="ru.yunovozhilov.Point" scope="prototype">
+        <constructor-arg ref="coords" />
+        <property name="x" value="10"/>
+        <property name="y" value="-10"/>
+        <property name="color" value="Green"/>
+    </bean>
+    <bean id="circle" class="ru.yunovozhilov.Circle" scope="prototype">
+        <property name="center">
+            <bean class="ru.yunovozhilov.Coords">
+                <property name="x" value="50"/>
+                <property name="y" value="150"/>
+            </bean>
+        </property>
+        <property name="radius" value="10"/>
+        <property name="color" value="Red"/>
+    </bean>
 </beans>
