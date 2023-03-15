@@ -41,7 +41,7 @@ public class HibernateCourseDAO implements CourseDAO {
     }
 
     @Override
-    public List<Course> findByName(String title) {
+    public List<Course> findByTitle(String title) {
         return getSessionFactory().getCurrentSession().
                 createQuery("from Course x where x.title LIKE :search")
                 .setParameter("search", "%"+title.trim()+"%")

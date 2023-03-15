@@ -10,7 +10,7 @@ public class App {
         CourseDAO courseDao = context.getBean(CourseDAO.class);
 
         //Поиск в H2 регистрозависимый
-        for(Course c : courseDao.findByName("Web"))
+        for(Course c : courseDao.findByTitle("Web"))
             System.out.println(c);
 
         context.close();
