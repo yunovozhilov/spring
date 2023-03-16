@@ -10,6 +10,10 @@ public class App {
                 CourseService.class);
         for(Course c : courseService.findByTitle("web"))
             System.out.println(c);
+        System.out.println("------------------------------------------");
+        for(Course c : courseService.findAll())
+            System.out.println(c);
+
         context.close();
     }
 }

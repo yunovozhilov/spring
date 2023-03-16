@@ -14,4 +14,9 @@ public class SpringJpaCourseService implements CourseService{
     public List<Course> findByTitle(String title) {
         return courseRepository.findByTitle("%"+title.trim()+"%");
     }
+
+    @Override
+    public List<Course> findAll() {
+        return courseRepository.findAll();
+    }
 }
